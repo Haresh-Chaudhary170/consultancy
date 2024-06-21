@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Navbar with Dropdowns</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Additional styles to handle the hover effect */
+    .group:hover .group-hover\:block {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-4">
+          <!-- Logo -->
+          <div>
+            <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+              <svg class="h-6 w-6 mr-1 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6h4"></path>
+              </svg>
+              <span class="font-bold">Navbar</span>
+            </a>
+          </div>
+        </div>
+        <!-- Primary Navbar items -->
+        <div class="hidden md:flex items-center space-x-1">
+          <div class="relative group">
+            <a href="#" class="flex items-center py-5 px-3 text-gray-700 hover:text-purple-700">
+              Menu 1
+              <svg class="ml-1 h-5 w-5 text-gray-500 group-hover:text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div class="absolute left-0 w-40 bg-white shadow-lg p-2 hidden group-hover:block">
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 3</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" class="flex items-center py-5 px-3 text-gray-700 hover:text-purple-700">
+              Menu 2
+              <svg class="ml-1 h-5 w-5 text-gray-500 group-hover:text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div class="absolute left-0 w-40 bg-white shadow-lg p-2 hidden group-hover:block">
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 3</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <a href="#" class="flex items-center py-5 px-3 text-gray-700 hover:text-purple-700">
+              Menu 3
+              <svg class="ml-1 h-5 w-5 text-gray-500 group-hover:text-purple-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div class="absolute left-0 w-40 bg-white shadow-lg p-2 hidden group-hover:block">
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 3</a>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="mobile-menu-button">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu hidden md:hidden">
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Menu 1</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Menu 2</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Menu 3</a>
+    </div>
+  </nav>
+  <script>
+    const btn = document.querySelector('button.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
